@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BillingComponent } from './components/billing/billing.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./feature-modules/billing/billing.module').then(
-        (m) => m.BillingModule
-      ),
+    component: BillingComponent,
   },
   {
     path: '**',
@@ -20,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class BillingRoutingModule {}
